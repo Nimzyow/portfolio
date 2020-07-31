@@ -42,6 +42,7 @@ export const Landing = () => {
           height: "460px",
           position: "absolute",
           top: "316px",
+          cursor: "pointer",
         }}
         onClick={() => goToLink("portfolio")}
       ></div>
