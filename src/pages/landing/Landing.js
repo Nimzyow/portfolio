@@ -23,12 +23,9 @@ export const Landing = () => {
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
-      {/* <div>
-        <h1>Hello aws</h1>
-      </div> */}
       <img src={underwaterImage} className="imageWidth" useMap="#Map" />
       <map name="Map" id="Map">
-        {createArea("10, 277, 10, 312, 163, 387, 163, 351", "javascript")}
+        {createArea("10, 277, 10, 312, 163, 387, 163, 351", "portfolio")}
         {createArea("178, 352, 178, 387, 330, 312, 330, 277", "javascript")}
         {createArea("10, 315, 10, 351, 163, 426, 163, 392", "react")}
         {createArea("178, 394, 178, 426, 330, 352, 330, 315", "react")}
