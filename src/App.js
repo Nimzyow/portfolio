@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { Landing } from "./pages/landing/Landing";
+import { Portfolio } from "./pages/portfolio/Portfolio";
 import { ReactPage } from "./pages/react/ReactPage";
 import { JavaScript } from "./pages/javascript/JavaScript";
 import { Typescript } from "./pages/typescriptPage/typescriptPage";
@@ -17,6 +18,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={Landing} />
+        <Route exact path="/portfolio" component={Portfolio} />
         <Route exact path="/react" component={ReactPage} />
         <Route exact path="/javascript" component={JavaScript} />
         <Route exact path="/typescript" component={Typescript} />
