@@ -1,5 +1,6 @@
 import React from "react";
 import { SpriteAnimator } from "react-sprite-animator";
+import { Project } from "../../component/project/Project";
 
 import frameSheet from "../../assets/frameSheet.png";
 
@@ -24,22 +25,25 @@ export const Portfolio = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          border: "1px solid black",
           width: "300px",
         }}
       >
-        <h3>Storii</h3>
-        <div
-          style={{
-            display: "flex",
-            width: "100%",
-            border: "1px solid black",
-            justifyContent: "space-evenly",
-          }}
-        >
-          <h4>Github</h4>
-          <h4>Website</h4>
-        </div>
+        <Project
+          title={"Storii"}
+          github={"https://github.com/ShinyVerse/Storii"}
+        />
+        <Project
+          title={"Storii Server"}
+          github={"https://github.com/Nimzyow/storii_server"}
+        />
+        <Project
+          title={"DateSpot"}
+          github={"https://github.com/Nimzyow/datespot"}
+        />
+        <Project
+          title={"DateSpot React-Native"}
+          github={"https://github.com/Nimzyow/datespot-reactnative"}
+        />
       </div>
     </div>
   );
