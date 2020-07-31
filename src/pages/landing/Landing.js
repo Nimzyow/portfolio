@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-//import underwaterImage from "../../assets/isometricunderwater.png";
+import underwaterImage from "../../assets/isometricunderwater.png";
 import "./LandingPage.scss";
 
 export const Landing = () => {
@@ -23,10 +23,10 @@ export const Landing = () => {
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
-      <div>
+      {/* <div>
         <h1>Hello aws</h1>
-      </div>
-      {/* <img src={underwaterImage} className="imageWidth" useMap="#Map" />
+      </div> */}
+      <img src={underwaterImage} className="imageWidth" useMap="#Map" />
       <map name="Map" id="Map">
         {createArea("10, 277, 10, 312, 163, 387, 163, 351", "javascript")}
         {createArea("178, 352, 178, 387, 330, 312, 330, 277", "javascript")}
@@ -49,7 +49,7 @@ export const Landing = () => {
           "178, 663, 178, 698, 330, 624, 330, 589",
           "reacttestinglib",
         )}
-      </map> */}
+      </map>
     </div>
   );
 };
