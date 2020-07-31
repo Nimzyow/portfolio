@@ -1,7 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { SpriteAnimator } from "react-sprite-animator";
 
-import underwaterImage from "../../assets/isometricunderwater.png";
+import underwaterImageSheet from "../../assets/isometricunderwater-Sheet.png";
 import "./LandingPage.scss";
 
 export const Landing = () => {
@@ -9,23 +10,44 @@ export const Landing = () => {
 
   const goToLink = (link) => history.push(`/${link}`);
 
-  const createArea = (coords, link) => {
-    return (
-      <area
-        shape="poly"
-        coords={coords}
-        onClick={() => {
-          goToLink(link);
-        }}
-      />
-    );
-  };
+  // const createArea = (coords, link) => {
+  //   return (
+  //     <area
+  //       shape="poly"
+  //       coords={coords}
+  //       onClick={() => {
+  //         goToLink(link);
+  //       }}
+  //     />
+  //   );
+  // };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <img src={underwaterImage} className="imageWidth" useMap="#Map" />
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+    >
+      <SpriteAnimator
+        sprite={underwaterImageSheet}
+        width={344}
+        height={833}
+        fps={10}
+      />
+      <div
+        style={{
+          width: "344px",
+          height: "460px",
+          position: "absolute",
+          top: "316px",
+        }}
+        onClick={() => goToLink("portfolio")}
+      ></div>
+      {/* <img src={underwaterImage} className="imageWidth" useMap="#Map" />
       <map name="Map" id="Map">
-        {createArea("10, 277, 10, 312, 163, 387, 163, 351", "portfolio")}
+        {createArea("10, 277, 10, 312, 163, 387, 163, 351", "javascript")}
         {createArea("178, 352, 178, 387, 330, 312, 330, 277", "javascript")}
         {createArea("10, 315, 10, 351, 163, 426, 163, 392", "react")}
         {createArea("178, 394, 178, 426, 330, 352, 330, 315", "react")}
@@ -46,7 +68,7 @@ export const Landing = () => {
           "178, 663, 178, 698, 330, 624, 330, 589",
           "reacttestinglib",
         )}
-      </map>
+      </map> */}
     </div>
   );
 };
