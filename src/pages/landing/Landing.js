@@ -30,7 +30,7 @@ export const Landing = () => {
         flexDirection: "column",
       }}
     >
-      <div style={{ height: "50px" }} />
+      <div style={{ height: "30px" }} />
       <SpriteAnimator
         sprite={underwaterImageSheet}
         width={344}
