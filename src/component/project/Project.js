@@ -1,9 +1,22 @@
 import React, { Fragment } from "react";
 
-export const Project = ({ title, github, website }) => {
+export const Project = ({ title, github, website, description }) => {
   return (
     <Fragment>
-      <h3>{title}</h3>
+      <h2
+        style={{
+          textAlign: "center",
+        }}
+      >
+        {title}
+      </h2>
+      <div
+        style={{
+          borderBottom: "2px solid #f9a31b",
+          width: "100%",
+        }}
+      />
+      <h4 style={{ textAlign: "center" }}>{description}</h4>
       <div
         style={{
           display: "flex",
@@ -25,4 +38,5 @@ export const Project = ({ title, github, website }) => {
 Project.defaultProps = {
   github: "https://github.com/Nimzyow",
   website: "https://github.com/Nimzyow",
+  description: "No description",
 };
