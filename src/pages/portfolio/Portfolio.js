@@ -19,7 +19,7 @@ export const Portfolio = () => {
         title: "Storii Server",
         github: "https://github.com/Nimzyow/storii_server",
         description:
-          "The server side to the amazing application above, Storii. Simply creating a server that does the job was not our goal. We held stead fast to our motto that everything was to be TDD'd. The outcome is a server that is beautifully tested and easy to ready.",
+          "The server side to the amazing application above, Storii. Simply creating a server that does the job was not our goal. We held stead fast to our motto that everything was to be TDD'd. The outcome is a server that is beautifully tested and easy to read.",
         website: "https://storii-server.herokuapp.com/",
       },
       {
