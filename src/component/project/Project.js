@@ -6,7 +6,7 @@ export const Project = ({ title, github, website, description }) => {
       style={{
         border: "2px solid black",
         padding: "5px",
-        boxShadow: "3px 5px 8px 5px #888888",
+        boxShadow: "2px 1px 10px 2px #888888",
         margin: "10px",
         width: "100%",
       }}
