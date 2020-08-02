@@ -2,7 +2,15 @@ import React, { Fragment } from "react";
 
 export const Project = ({ title, github, website, description }) => {
   return (
-    <Fragment>
+    <div
+      style={{
+        border: "2px solid black",
+        padding: "5px",
+        boxShadow: "3px 5px 8px 5px #888888",
+        margin: "10px",
+        width: "100%",
+      }}
+    >
       <h2
         style={{
           textAlign: "center",
@@ -31,7 +39,7 @@ export const Project = ({ title, github, website, description }) => {
           <h4>Website</h4>
         </a>
       </div>
-    </Fragment>
+    </div>
   );
 };
 
