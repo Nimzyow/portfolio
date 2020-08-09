@@ -44,13 +44,23 @@ export const Landing = () => {
         fps={10}
       />
       <div
-        style={{
-          width: "344px",
-          height: "460px",
-          position: "absolute",
-          top: "316px",
-          cursor: "pointer",
-        }}
+        style={
+          isDesktop
+            ? {
+                width: "688px",
+                height: "920px",
+                position: "absolute",
+                top: "632px",
+                cursor: "pointer",
+              }
+            : {
+                width: "344px",
+                height: "460px",
+                position: "absolute",
+                top: "316px",
+                cursor: "pointer",
+              }
+        }
         onClick={() => goToLink("portfolio")}
       ></div>
       {/* <img src={underwaterImage} className="imageWidth" useMap="#Map" />
