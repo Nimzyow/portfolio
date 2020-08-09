@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { SpriteAnimator } from "react-sprite-animator";
 
 import underwaterImageSheet from "../../assets/isometricunderwater-Sheet.png";
+import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png";
 import "./LandingPage.scss";
 
 export const Landing = () => {
@@ -32,9 +33,9 @@ export const Landing = () => {
     >
       <div style={{ height: "30px" }} />
       <SpriteAnimator
-        sprite={underwaterImageSheet}
-        width={344}
-        height={833}
+        sprite={underwaterImageSheetx200}
+        width={688}
+        height={1666}
         fps={10}
       />
       <div
