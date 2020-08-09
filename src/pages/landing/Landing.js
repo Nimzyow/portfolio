@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { SpriteAnimator } from "react-sprite-animator";
+import { useMediaQuery } from "react-responsive";
 
 import underwaterImageSheet from "../../assets/isometricunderwater-Sheet.png";
 import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png";
@@ -10,6 +11,10 @@ export const Landing = () => {
   const history = useHistory();
 
   const goToLink = (link) => history.push(`/${link}`);
+
+  const isDesktop = useMediaQuery({
+    query: "(min-device-width: 575px)",
+  });
 
   // const createArea = (coords, link) => {
   //   return (
@@ -33,9 +38,9 @@ export const Landing = () => {
     >
       <div style={{ height: "30px" }} />
       <SpriteAnimator
-        sprite={underwaterImageSheetx200}
-        width={688}
-        height={1666}
+        sprite={isDesktop ? underwaterImageSheetx200 : underwaterImageSheet}
+        width={isDesktop ? 688 : 344}
+        height={isDesktop ? 1666 : 833}
         fps={10}
       />
       <div
