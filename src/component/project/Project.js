@@ -1,16 +1,9 @@
 import React, { Fragment } from "react";
+import "./Project.scss";
 
 export const Project = ({ title, github, website, description }) => {
   return (
-    <div
-      style={{
-        border: "2px solid black",
-        padding: "5px",
-        boxShadow: "2px 1px 10px 2px #888888",
-        margin: "10px",
-        width: "100%",
-      }}
-    >
+    <div className="ProjectContainer">
       <h2
         style={{
           textAlign: "center",
