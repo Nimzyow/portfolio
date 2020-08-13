@@ -33,7 +33,7 @@ export const Portfolio = () => {
       title: "DateSpot React-Native",
       github: "https://github.com/Nimzyow/datespot-reactnative",
       description:
-        "This is the same application as DateSpot except it was TDD'd with React Native. I created the React-Native version of DateSpot to demonstrate my abilities with React-Native. It was fascinating to see the application running natively on my phone. I am currently implementing communication with server through GraphQL.",
+        "This is the same application as DateSpot except it was TDD'd with React Native. I created the React-Native version of DateSpot to demonstrate my abilities with React-Native. I am currently implementing communication with server through GraphQL.",
       website: "https://github.com/Nimzyow/datespot-reactnative",
     },
   ];

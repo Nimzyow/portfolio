@@ -8,13 +8,7 @@ import "./Project.scss";
 export const Project = ({ title, github, website, description }) => {
   return (
     <div className="ProjectContainer">
-      <h2
-        style={{
-          textAlign: "center",
-        }}
-      >
-        {title}
-      </h2>
+      <h2 className="text-center">{title}</h2>
       <div
         style={{
           borderBottom: "2px solid #f9a31b",
