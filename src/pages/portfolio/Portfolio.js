@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { SpriteAnimator } from "react-sprite-animator";
 import { Project } from "../../component/project/Project";
-import { CardGroup, CardDeck, CardColumns } from "react-bootstrap";
+import { GApageView } from "../../index";
 import "./Portfolio.scss";
 
 import frameSheet from "../../assets/frameSheet.png";
 
 export const Portfolio = () => {
+  useEffect(() => {
+    GApageView("portfolio");
+  }, []);
+
   const projects = [
     {
       title: "Storii",
