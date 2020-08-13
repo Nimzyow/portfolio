@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { SpriteAnimator } from "react-sprite-animator";
 import { useMediaQuery } from "react-responsive";
-
+import ReactGa from "react-ga";
 import underwaterImageSheet from "../../assets/isometricunderwater-Sheet.png";
 import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png";
 import "./LandingPage.scss";
@@ -63,9 +63,13 @@ export const Landing = () => {
                 cursor: "pointer",
               }
         }
-        onClick={() =>
-          window.open("https://www.linkedin.com/in/nima-soufiani-555a76198/")
-        }
+        onClick={() => {
+          ReactGa.event({
+            category: "Navigation",
+            action: "clicked on LinkedIn button",
+          });
+          window.open("https://www.linkedin.com/in/nima-soufiani-555a76198/");
+        }}
       />
       <div
         style={
@@ -86,6 +90,10 @@ export const Landing = () => {
               }
         }
         onClick={() => {
+          ReactGa.event({
+            category: "Navigation",
+            action: "clicked on screens in pixel art to portfolio",
+          });
           goToLink("portfolio");
           window.scroll(0, 0);
         }}
