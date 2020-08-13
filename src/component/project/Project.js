@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Card } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faDesktop } from "@fortawesome/free-solid-svg-icons";
 import "./Project.scss";
 
 export const Project = ({ title, github, website, description }) => {
@@ -32,14 +33,17 @@ export const Project = ({ title, github, website, description }) => {
         }}
       >
         <FontAwesomeIcon
+          style={{ cursor: "pointer" }}
           onClick={() => window.open(github)}
           icon={faGithub}
           size={"3x"}
         />
-
-        <a style={{ textDecoration: "none" }} href={website}>
-          <h4>Website</h4>
-        </a>
+        <FontAwesomeIcon
+          style={{ cursor: "pointer" }}
+          onClick={() => window.open(website)}
+          icon={faDesktop}
+          size={"3x"}
+        />
       </div>
     </div>
   );
