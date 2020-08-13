@@ -47,21 +47,48 @@ export const Landing = () => {
         style={
           isDesktop
             ? {
-                width: "688px",
-                height: "920px",
+                width: "60px",
+                height: "60px",
+                position: "relative",
+                bottom: "1039px",
+                left: "-50px",
+                cursor: "pointer",
+              }
+            : {
+                width: "30px",
+                height: "30px",
+                left: "148px",
                 position: "absolute",
-                top: "632px",
+                top: "341px",
+                cursor: "pointer",
+              }
+        }
+        onClick={() =>
+          window.open("https://www.linkedin.com/in/nima-soufiani-555a76198/")
+        }
+      />
+      <div
+        style={
+          isDesktop
+            ? {
+                width: "688px",
+                height: "910px",
+                position: "absolute",
+                top: "732px",
                 cursor: "pointer",
               }
             : {
                 width: "344px",
-                height: "460px",
+                height: "450px",
                 position: "absolute",
-                top: "316px",
+                top: "378px",
                 cursor: "pointer",
               }
         }
-        onClick={() => goToLink("portfolio")}
+        onClick={() => {
+          goToLink("portfolio");
+          window.scroll(0, 0);
+        }}
       ></div>
       {/* <img src={underwaterImage} className="imageWidth" useMap="#Map" />
       <map name="Map" id="Map">

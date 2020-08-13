@@ -1,23 +1,24 @@
 import React, { Fragment } from "react";
+import { Card } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faDesktop } from "@fortawesome/free-solid-svg-icons";
 import "./Project.scss";
 
 export const Project = ({ title, github, website, description }) => {
   return (
     <div className="ProjectContainer">
-      <h2
-        style={{
-          textAlign: "center",
-        }}
-      >
-        {title}
-      </h2>
+      <h2 className="text-center">{title}</h2>
       <div
         style={{
           borderBottom: "2px solid #f9a31b",
           width: "100%",
+          marginTop: "4px",
         }}
       />
-      <h4 style={{ textAlign: "center" }}>{description}</h4>
+      <p style={{ textAlign: "center", fontSize: "0.9rem", marginTop: "4px" }}>
+        {description}
+      </p>
       <div
         style={{
           display: "flex",
@@ -25,12 +26,18 @@ export const Project = ({ title, github, website, description }) => {
           justifyContent: "space-evenly",
         }}
       >
-        <a style={{ textDecoration: "none" }} href={github}>
-          <h4>Github</h4>
-        </a>
-        <a style={{ textDecoration: "none" }} href={website}>
-          <h4>Website</h4>
-        </a>
+        <FontAwesomeIcon
+          style={{ cursor: "pointer" }}
+          onClick={() => window.open(github)}
+          icon={faGithub}
+          size={"3x"}
+        />
+        <FontAwesomeIcon
+          style={{ cursor: "pointer" }}
+          onClick={() => window.open(website)}
+          icon={faDesktop}
+          size={"3x"}
+        />
       </div>
     </div>
   );

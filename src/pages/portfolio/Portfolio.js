@@ -1,7 +1,7 @@
 import React from "react";
 import { SpriteAnimator } from "react-sprite-animator";
 import { Project } from "../../component/project/Project";
-import { Navbar } from "../../component/layout/navbar/Navbar";
+import { CardGroup, CardDeck, CardColumns } from "react-bootstrap";
 import "./Portfolio.scss";
 
 import frameSheet from "../../assets/frameSheet.png";
@@ -33,19 +33,13 @@ export const Portfolio = () => {
       title: "DateSpot React-Native",
       github: "https://github.com/Nimzyow/datespot-reactnative",
       description:
-        "This is the same application as DateSpot except it was TDD'd with React Native. I created the React-Native version of DateSpot to demonstrate my abilities with React-Native. It was fascinating to see the application running natively on my phone. I am currently implementing communication with server through GraphQL.",
+        "This is the same application as DateSpot except it was TDD'd with React Native. I created the React-Native version of DateSpot to demonstrate my abilities with React-Native. I am currently implementing communication with server through GraphQL.",
       website: "https://github.com/Nimzyow/datespot-reactnative",
     },
   ];
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
+    <div className="d-flex align-items-center flex-column">
       {/* <Navbar /> */}
       <SpriteAnimator
         sprite={frameSheet}
@@ -88,6 +82,17 @@ export const Portfolio = () => {
           />
         </div>
       </div>
+      {/* <CardDeck>
+        
+      </CardDeck> */}
+      {/* <div className="projectsContainer">
+        <div className="rowContainer">
+          
+        </div>
+        <div className="rowContainer">
+          
+        </div>
+      </div> */}
     </div>
   );
 };
