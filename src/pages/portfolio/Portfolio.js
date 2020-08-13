@@ -1,7 +1,7 @@
 import React from "react";
 import { SpriteAnimator } from "react-sprite-animator";
 import { Project } from "../../component/project/Project";
-import { Navbar } from "../../component/layout/navbar/Navbar";
+import { CardGroup, CardDeck, CardColumns } from "react-bootstrap";
 import "./Portfolio.scss";
 
 import frameSheet from "../../assets/frameSheet.png";
@@ -39,13 +39,7 @@ export const Portfolio = () => {
   ];
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
+    <div className="d-flex align-items-center flex-column">
       {/* <Navbar /> */}
       <SpriteAnimator
         sprite={frameSheet}
@@ -88,6 +82,17 @@ export const Portfolio = () => {
           />
         </div>
       </div>
+      {/* <CardDeck>
+        
+      </CardDeck> */}
+      {/* <div className="projectsContainer">
+        <div className="rowContainer">
+          
+        </div>
+        <div className="rowContainer">
+          
+        </div>
+      </div> */}
     </div>
   );
 };

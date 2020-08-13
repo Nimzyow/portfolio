@@ -1,4 +1,7 @@
 import React, { Fragment } from "react";
+import { Card } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./Project.scss";
 
 export const Project = ({ title, github, website, description }) => {
@@ -15,9 +18,12 @@ export const Project = ({ title, github, website, description }) => {
         style={{
           borderBottom: "2px solid #f9a31b",
           width: "100%",
+          marginTop: "4px",
         }}
       />
-      <h4 style={{ textAlign: "center" }}>{description}</h4>
+      <p style={{ textAlign: "center", fontSize: "0.9rem", marginTop: "4px" }}>
+        {description}
+      </p>
       <div
         style={{
           display: "flex",
@@ -25,9 +31,12 @@ export const Project = ({ title, github, website, description }) => {
           justifyContent: "space-evenly",
         }}
       >
-        <a style={{ textDecoration: "none" }} href={github}>
-          <h4>Github</h4>
-        </a>
+        <FontAwesomeIcon
+          onClick={() => window.open(github)}
+          icon={faGithub}
+          size={"3x"}
+        />
+
         <a style={{ textDecoration: "none" }} href={website}>
           <h4>Website</h4>
         </a>
