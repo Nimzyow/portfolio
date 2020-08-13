@@ -49,9 +49,9 @@ export const Landing = () => {
             ? {
                 width: "60px",
                 height: "60px",
-                left: "360px",
-                position: "absolute",
-                top: "652px",
+                position: "relative",
+                bottom: "1039px",
+                left: "-50px",
                 cursor: "pointer",
               }
             : {
