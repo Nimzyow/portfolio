@@ -8,97 +8,101 @@ import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x20
 import "./LandingPage.scss";
 
 export const Landing = () => {
-  const history = useHistory();
+    const history = useHistory();
 
-  const goToLink = (link) => history.push(`/${link}`);
+    const goToLink = (link) => history.push(`/${link}`);
 
-  const isDesktop = useMediaQuery({
-    query: "(min-device-width: 575px)",
-  });
+    const isDesktop = useMediaQuery({
+        query: "(min-device-width: 575px)",
+    });
 
-  // const createArea = (coords, link) => {
-  //   return (
-  //     <area
-  //       shape="poly"
-  //       coords={coords}
-  //       onClick={() => {
-  //         goToLink(link);
-  //       }}
-  //     />
-  //   );
-  // };
+    // const createArea = (coords, link) => {
+    //   return (
+    //     <area
+    //       shape="poly"
+    //       coords={coords}
+    //       onClick={() => {
+    //         goToLink(link);
+    //       }}
+    //     />
+    //   );
+    // };
 
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
-      <div style={{ height: "30px" }} />
-      <SpriteAnimator
-        sprite={isDesktop ? underwaterImageSheetx200 : underwaterImageSheet}
-        width={isDesktop ? 688 : 344}
-        height={isDesktop ? 1666 : 833}
-        fps={10}
-      />
-      <div
-        style={
-          isDesktop
-            ? {
-                width: "60px",
-                height: "60px",
-                position: "relative",
-                bottom: "1039px",
-                left: "-50px",
-                cursor: "pointer",
-              }
-            : {
-                width: "30px",
-                height: "30px",
-                left: "148px",
-                position: "absolute",
-                top: "341px",
-                cursor: "pointer",
-              }
-        }
-        onClick={() => {
-          ReactGa.event({
-            category: "Navigation",
-            action: "clicked on LinkedIn button",
-          });
-          window.open("https://www.linkedin.com/in/nima-soufiani-555a76198/");
-        }}
-      />
-      <div
-        style={
-          isDesktop
-            ? {
-                width: "688px",
-                height: "910px",
-                position: "absolute",
-                top: "732px",
-                cursor: "pointer",
-              }
-            : {
-                width: "344px",
-                height: "450px",
-                position: "absolute",
-                top: "378px",
-                cursor: "pointer",
-              }
-        }
-        onClick={() => {
-          ReactGa.event({
-            category: "Navigation",
-            action: "clicked on screens in pixel art to portfolio",
-          });
-          goToLink("portfolio");
-          window.scroll(0, 0);
-        }}
-      ></div>
-      {/* <img src={underwaterImage} className="imageWidth" useMap="#Map" />
+    return (
+        <div
+            style={{
+                display: "flex",
+                alignItems: "center",
+                flexDirection: "column",
+            }}
+        >
+            <div style={{ height: "30px" }} />
+            <SpriteAnimator
+                sprite={
+                    isDesktop ? underwaterImageSheetx200 : underwaterImageSheet
+                }
+                width={isDesktop ? 688 : 344}
+                height={isDesktop ? 1790 : 895}
+                fps={10}
+            />
+            <div
+                style={
+                    isDesktop
+                        ? {
+                              width: "60px",
+                              height: "60px",
+                              position: "relative",
+                              bottom: "1170px",
+                              left: "-50px",
+                              cursor: "pointer",
+                          }
+                        : {
+                              width: "30px",
+                              height: "30px",
+                              left: "148px",
+                              position: "absolute",
+                              top: "341px",
+                              cursor: "pointer",
+                          }
+                }
+                onClick={() => {
+                    ReactGa.event({
+                        category: "Navigation",
+                        action: "clicked on LinkedIn button",
+                    });
+                    window.open(
+                        "https://www.linkedin.com/in/nima-soufiani-555a76198/",
+                    );
+                }}
+            />
+            <div
+                style={
+                    isDesktop
+                        ? {
+                              width: "688px",
+                              height: "910px",
+                              position: "absolute",
+                              top: "732px",
+                              cursor: "pointer",
+                          }
+                        : {
+                              width: "344px",
+                              height: "450px",
+                              position: "absolute",
+                              top: "378px",
+                              cursor: "pointer",
+                          }
+                }
+                onClick={() => {
+                    ReactGa.event({
+                        category: "Navigation",
+                        action: "clicked on screens in pixel art to portfolio",
+                    });
+                    goToLink("portfolio");
+                    window.scroll(0, 0);
+                }}
+            ></div>
+            {/* <img src={underwaterImage} className="imageWidth" useMap="#Map" />
       <map name="Map" id="Map">
         {createArea("10, 277, 10, 312, 163, 387, 163, 351", "javascript")}
         {createArea("178, 352, 178, 387, 330, 312, 330, 277", "javascript")}
@@ -122,6 +126,6 @@ export const Landing = () => {
           "reacttestinglib",
         )}
       </map> */}
-    </div>
-  );
+        </div>
+    );
 };
