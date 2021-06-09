@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faDesktop } from "@fortawesome/free-solid-svg-icons";
-import "./Project.scss";
+import React, { Fragment } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import { faDesktop } from "@fortawesome/free-solid-svg-icons"
+import "./Project.css"
 
 export const Project = ({ title, github, website, description }) => {
     return (
@@ -45,11 +45,11 @@ export const Project = ({ title, github, website, description }) => {
                 />
             </div>
         </div>
-    );
-};
+    )
+}
 
 Project.defaultProps = {
     github: "https://github.com/Nimzyow",
     website: "https://github.com/Nimzyow",
     description: "No description",
-};
+}

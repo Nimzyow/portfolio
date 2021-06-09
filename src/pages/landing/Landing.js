@@ -1,20 +1,20 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
-import { SpriteAnimator } from "react-sprite-animator";
-import { useMediaQuery } from "react-responsive";
-import ReactGa from "react-ga";
-import underwaterImageSheet from "../../assets/isometricunderwater-Sheet.png";
-import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png";
-import "./LandingPage.scss";
+import React from "react"
+import { useHistory } from "react-router-dom"
+import { SpriteAnimator } from "react-sprite-animator"
+import { useMediaQuery } from "react-responsive"
+import ReactGa from "react-ga"
+import underwaterImageSheet from "../../assets/isometricunderwater-Sheet.png"
+import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png"
+import "./LandingPage.css"
 
 export const Landing = () => {
-    const history = useHistory();
+    const history = useHistory()
 
-    const goToLink = (link) => history.push(`/${link}`);
+    const goToLink = (link) => history.push(`/${link}`)
 
     const isDesktop = useMediaQuery({
         query: "(min-device-width: 575px)",
-    });
+    })
 
     // const createArea = (coords, link) => {
     //   return (
@@ -38,9 +38,7 @@ export const Landing = () => {
         >
             <div style={{ height: "30px" }} />
             <SpriteAnimator
-                sprite={
-                    isDesktop ? underwaterImageSheetx200 : underwaterImageSheet
-                }
+                sprite={isDesktop ? underwaterImageSheetx200 : underwaterImageSheet}
                 width={isDesktop ? 688 : 344}
                 height={isDesktop ? 1790 : 895}
                 fps={10}
@@ -69,10 +67,8 @@ export const Landing = () => {
                     ReactGa.event({
                         category: "Navigation",
                         action: "clicked on LinkedIn button",
-                    });
-                    window.open(
-                        "https://www.linkedin.com/in/nima-soufiani-555a76198/",
-                    );
+                    })
+                    window.open("https://www.linkedin.com/in/nima-soufiani-555a76198/")
                 }}
             />
             <div
@@ -97,9 +93,9 @@ export const Landing = () => {
                     ReactGa.event({
                         category: "Navigation",
                         action: "clicked on screens in pixel art to portfolio",
-                    });
-                    goToLink("portfolio");
-                    window.scroll(0, 0);
+                    })
+                    goToLink("portfolio")
+                    window.scroll(0, 0)
                 }}
             ></div>
             {/* <img src={underwaterImage} className="imageWidth" useMap="#Map" />
@@ -127,5 +123,5 @@ export const Landing = () => {
         )}
       </map> */}
         </div>
-    );
-};
+    )
+}
