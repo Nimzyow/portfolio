@@ -44,7 +44,6 @@ export const Portfolio = () => {
 
     return (
         <div className="d-flex align-items-center flex-column">
-            {/* <Navbar /> */}
             <SpriteAnimator sprite={frameSheet} width={200} height={200} fps={10} scale={0.6} />
             <div className="projectsContainer">
                 <div className="rowContainer">
@@ -80,17 +79,6 @@ export const Portfolio = () => {
                     />
                 </div>
             </div>
-            {/* <CardDeck>
-        
-      </CardDeck> */}
-            {/* <div className="projectsContainer">
-        <div className="rowContainer">
-          
-        </div>
-        <div className="rowContainer">
-          
-        </div>
-      </div> */}
         </div>
     )
 }

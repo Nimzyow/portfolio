@@ -6,7 +6,7 @@ import { Portfolio } from "./pages/portfolio/Portfolio"
 
 import { initGA } from "./index"
 
-function App() {
+const App: React.FC = () => {
     useEffect(() => {
         initGA()
     }, [])
