@@ -4,7 +4,10 @@ import { SpriteAnimator } from "react-sprite-animator"
 import { useMediaQuery } from "react-responsive"
 import ReactGa from "react-ga"
 import underwaterImageSheet from "../../assets/isometricunderwater-Sheet.png"
+import individualBanner from "../../assets/individualBanner.png"
+import individualBannerx2 from "../../assets/individualBannerx2.png"
 import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png"
+import { Image } from "react-bootstrap"
 import "./LandingPage.css"
 
 export const Landing = () => {
@@ -85,7 +88,15 @@ export const Landing = () => {
                     goToLink("portfolio")
                     window.scroll(0, 0)
                 }}
-            ></div>
+            />
+            <div style={{ position: "relative", width: "688px" }}>
+                <div style={{ width: "688px", height: "234px", position: "absolute", top: 0 }}>
+                    <Image src={individualBannerx2} width="100%" height="100%" />
+                </div>
+                <div style={{ width: "688px", height: "234px", position: "absolute", top: 79 }}>
+                    <Image src={individualBannerx2} width="100%" height="100%" />
+                </div>
+            </div>
         </div>
     )
 }
