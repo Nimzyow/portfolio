@@ -6,6 +6,7 @@ import ReactGa from "react-ga"
 import underwaterImageSheet from "../../assets/isometricunderwater-Sheet.png"
 import individualBanner from "../../assets/individualBanner.png"
 import individualBannerx2 from "../../assets/individualBannerx2.png"
+import individualBannerRedx2 from "../../assets/individualBannerRedx2.png"
 import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png"
 import { Image } from "react-bootstrap"
 import "./LandingPage.css"
@@ -21,6 +22,7 @@ export const Landing = () => {
 
     const dummyData = [
         { skill: "javascript", level: 10 },
+        { skill: "typescript", level: 10 },
         { skill: "typescript", level: 10 },
         { skill: "typescript", level: 10 },
         { skill: "typescript", level: 10 },
@@ -98,8 +100,12 @@ export const Landing = () => {
             />
             <div style={{ position: "relative", width: "688px" }}>
                 {dummyData.map((element, i) => (
-                    <div style={{ width: "688px", height: "234px", position: "absolute", top: i * 79 }}>
-                        <Image src={individualBannerx2} width="100%" height="100%" />
+                    <div style={{ width: "688px", height: "234px", position: "absolute", top: i * 78 }}>
+                        <Image
+                            src={i % 2 === 0 ? individualBannerx2 : individualBannerRedx2}
+                            width="100%"
+                            height="100%"
+                        />
                     </div>
                 ))}
             </div>
