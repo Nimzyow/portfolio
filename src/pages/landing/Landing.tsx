@@ -22,10 +22,10 @@ export const Landing = () => {
 
     const dummyData = [
         { skill: "javascript", level: 10 },
+        { skill: "python", level: 10 },
         { skill: "typescript", level: 10 },
-        { skill: "typescript", level: 10 },
-        { skill: "typescript", level: 10 },
-        { skill: "typescript", level: 10 },
+        { skill: "django", level: 10 },
+        { skill: "docker", level: 10 },
     ]
 
     return (
