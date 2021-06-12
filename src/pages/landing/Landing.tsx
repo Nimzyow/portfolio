@@ -77,25 +77,6 @@ export const Landing = () => {
                 fps={10}
             />
             <OuterDiv
-                // style={
-                //     isDesktop
-                //         ? {
-                //               width: "60px",
-                //               height: "60px",
-                //               position: "relative",
-                //               bottom: "1170px",
-                //               left: "-50px",
-                //               cursor: "pointer",
-                //           }
-                //         : {
-                //               width: "30px",
-                //               height: "30px",
-                //               left: "148px",
-                //               position: "absolute",
-                //               top: "341px",
-                //               cursor: "pointer",
-                //           }
-                // }
                 onClick={() => {
                     ReactGa.event({
                         category: "Navigation",
@@ -105,23 +86,6 @@ export const Landing = () => {
                 }}
             />
             <InnerDiv
-                // style={
-                //     isDesktop
-                //         ? {
-                //               width: "688px",
-                //               height: "910px",
-                //               position: "absolute",
-                //               top: "732px",
-                //               cursor: "pointer",
-                //           }
-                //         : {
-                //               width: "344px",
-                //               height: "450px",
-                //               position: "absolute",
-                //               top: "378px",
-                //               cursor: "pointer",
-                //           }
-                // }
                 onClick={() => {
                     ReactGa.event({
                         category: "Navigation",
