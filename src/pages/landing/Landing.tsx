@@ -19,6 +19,13 @@ export const Landing = () => {
         query: "(min-device-width: 575px)",
     })
 
+    const dummyData = [
+        { skill: "javascript", level: 10 },
+        { skill: "typescript", level: 10 },
+        { skill: "typescript", level: 10 },
+        { skill: "typescript", level: 10 },
+    ]
+
     return (
         <div
             style={{
@@ -90,12 +97,11 @@ export const Landing = () => {
                 }}
             />
             <div style={{ position: "relative", width: "688px" }}>
-                <div style={{ width: "688px", height: "234px", position: "absolute", top: 0 }}>
-                    <Image src={individualBannerx2} width="100%" height="100%" />
-                </div>
-                <div style={{ width: "688px", height: "234px", position: "absolute", top: 79 }}>
-                    <Image src={individualBannerx2} width="100%" height="100%" />
-                </div>
+                {dummyData.map((element, i) => (
+                    <div style={{ width: "688px", height: "234px", position: "absolute", top: i * 79 }}>
+                        <Image src={individualBannerx2} width="100%" height="100%" />
+                    </div>
+                ))}
             </div>
         </div>
     )
