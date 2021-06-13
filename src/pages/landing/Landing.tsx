@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useHistory } from "react-router-dom"
 import { SpriteAnimator } from "react-sprite-animator"
 import { useMediaQuery } from "react-responsive"
@@ -9,7 +9,6 @@ import individualBannerx2 from "../../assets/individualBannerx2.png"
 import individualBannerRed from "../../assets/individualBannerRed.png"
 import individualBannerRedx2 from "../../assets/individualBannerRedx2.png"
 import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png"
-import axios from "axios"
 import ax2 from "../../assets/alphabet/ax2.png"
 import bx2 from "../../assets/alphabet/bx2.png"
 import cx2 from "../../assets/alphabet/cx2.png"
@@ -264,11 +263,11 @@ export const Landing = () => {
                                         <div
                                             key={j}
                                             style={{
-                                                height: "40px",
-                                                width: "22px",
+                                                height: isDesktop ? "40px" : "20px",
+                                                width: isDesktop ? "22px" : "11px",
                                                 position: "absolute",
-                                                left: 292 - j * 20,
-                                                bottom: 37 + j * 10,
+                                                left: isDesktop ? 292 - j * 20 : (292 - j * 20) / 2,
+                                                bottom: isDesktop ? 37 + j * 10 : (37 + j * 10) / 2,
                                                 // top: 0,
                                                 zIndex: 2,
                                             }}
@@ -279,7 +278,7 @@ export const Landing = () => {
                                 })}
                                 <div
                                     style={{
-                                        width: "688px",
+                                        width: isDesktop ? "688px" : "344px",
                                         // height: "234px",
                                         position: "absolute",
                                         top: -5,
