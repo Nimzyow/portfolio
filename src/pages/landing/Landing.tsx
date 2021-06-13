@@ -10,6 +10,7 @@ import individualBannerRedx2 from "../../assets/individualBannerRedx2.png"
 import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png"
 import ax2 from "../../assets/alphabet/ax2.png"
 import cx2 from "../../assets/alphabet/cx2.png"
+import ex2 from "../../assets/alphabet/ex2.png"
 import ix2 from "../../assets/alphabet/ix2.png"
 import jx2 from "../../assets/alphabet/jx2.png"
 import px2 from "../../assets/alphabet/px2.png"
@@ -17,6 +18,7 @@ import rx2 from "../../assets/alphabet/rx2.png"
 import sx2 from "../../assets/alphabet/sx2.png"
 import tx2 from "../../assets/alphabet/tx2.png"
 import vx2 from "../../assets/alphabet/vx2.png"
+import yx2 from "../../assets/alphabet/yx2.png"
 import styled from "styled-components"
 import { Image } from "react-bootstrap"
 import "./LandingPage.css"
@@ -64,7 +66,7 @@ export const Landing = () => {
 
     const dummyData = [
         { skill: "javascript", level: 10 },
-        { skill: "javascript", level: 10 },
+        { skill: "typescript", level: 10 },
         { skill: "javascript", level: 10 },
         { skill: "javascript", level: 10 },
         { skill: "javascript", level: 10 },
@@ -77,6 +79,7 @@ export const Landing = () => {
     const alphabet: alphabetData = {
         a: ax2,
         c: cx2,
+        e: ex2,
         i: ix2,
         j: jx2,
         p: px2,
@@ -84,6 +87,7 @@ export const Landing = () => {
         s: sx2,
         t: tx2,
         v: vx2,
+        y: yx2,
     }
 
     return (
