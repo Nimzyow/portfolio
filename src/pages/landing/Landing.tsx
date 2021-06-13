@@ -9,10 +9,16 @@ import individualBannerx2 from "../../assets/individualBannerx2.png"
 import individualBannerRedx2 from "../../assets/individualBannerRedx2.png"
 import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png"
 import ax2 from "../../assets/alphabet/ax2.png"
+import bx2 from "../../assets/alphabet/bx2.png"
 import cx2 from "../../assets/alphabet/cx2.png"
+import dx2 from "../../assets/alphabet/dx2.png"
 import ex2 from "../../assets/alphabet/ex2.png"
+import gx2 from "../../assets/alphabet/gx2.png"
 import ix2 from "../../assets/alphabet/ix2.png"
 import jx2 from "../../assets/alphabet/jx2.png"
+import mx2 from "../../assets/alphabet/mx2.png"
+import nx2 from "../../assets/alphabet/nx2.png"
+import ox2 from "../../assets/alphabet/ox2.png"
 import px2 from "../../assets/alphabet/px2.png"
 import rx2 from "../../assets/alphabet/rx2.png"
 import sx2 from "../../assets/alphabet/sx2.png"
@@ -67,8 +73,8 @@ export const Landing = () => {
     const dummyData = [
         { skill: "javascript", level: 10 },
         { skill: "typescript", level: 10 },
-        { skill: "javascript", level: 10 },
-        { skill: "javascript", level: 10 },
+        { skill: "django", level: 10 },
+        { skill: "mongodb", level: 10 },
         { skill: "javascript", level: 10 },
     ]
 
@@ -78,10 +84,16 @@ export const Landing = () => {
 
     const alphabet: alphabetData = {
         a: ax2,
+        b: bx2,
         c: cx2,
+        d: dx2,
         e: ex2,
+        g: gx2,
         i: ix2,
         j: jx2,
+        m: mx2,
+        n: nx2,
+        o: ox2,
         p: px2,
         r: rx2,
         s: sx2,
