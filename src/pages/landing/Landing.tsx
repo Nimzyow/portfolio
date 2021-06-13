@@ -14,8 +14,11 @@ import cx2 from "../../assets/alphabet/cx2.png"
 import dx2 from "../../assets/alphabet/dx2.png"
 import ex2 from "../../assets/alphabet/ex2.png"
 import gx2 from "../../assets/alphabet/gx2.png"
+import hx2 from "../../assets/alphabet/hx2.png"
 import ix2 from "../../assets/alphabet/ix2.png"
 import jx2 from "../../assets/alphabet/jx2.png"
+import kx2 from "../../assets/alphabet/kx2.png"
+import lx2 from "../../assets/alphabet/lx2.png"
 import mx2 from "../../assets/alphabet/mx2.png"
 import nx2 from "../../assets/alphabet/nx2.png"
 import ox2 from "../../assets/alphabet/ox2.png"
@@ -23,8 +26,11 @@ import px2 from "../../assets/alphabet/px2.png"
 import rx2 from "../../assets/alphabet/rx2.png"
 import sx2 from "../../assets/alphabet/sx2.png"
 import tx2 from "../../assets/alphabet/tx2.png"
+import ux2 from "../../assets/alphabet/ux2.png"
 import vx2 from "../../assets/alphabet/vx2.png"
+import xx2 from "../../assets/alphabet/xx2.png"
 import yx2 from "../../assets/alphabet/yx2.png"
+import zx2 from "../../assets/alphabet/zx2.png"
 import styled from "styled-components"
 import { Image } from "react-bootstrap"
 import "./LandingPage.css"
@@ -89,8 +95,11 @@ export const Landing = () => {
         d: dx2,
         e: ex2,
         g: gx2,
+        h: hx2,
         i: ix2,
         j: jx2,
+        k: kx2,
+        l: lx2,
         m: mx2,
         n: nx2,
         o: ox2,
@@ -98,8 +107,11 @@ export const Landing = () => {
         r: rx2,
         s: sx2,
         t: tx2,
+        u: ux2,
         v: vx2,
+        x: xx2,
         y: yx2,
+        z: zx2,
     }
 
     return (
