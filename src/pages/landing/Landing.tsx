@@ -125,7 +125,7 @@ export const Landing = () => {
             <SpriteAnimator
                 sprite={isDesktop ? underwaterImageSheetx200 : underwaterImageSheet}
                 width={isDesktop ? 688 : 344}
-                height={isDesktop ? 1790 : 895}
+                height={isDesktop ? 1790 : 920}
                 fps={10}
             />
             <OuterDiv
