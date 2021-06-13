@@ -242,7 +242,7 @@ export const Landing = () => {
                                     width: "100%",
                                     // height: "234px",
                                     position: "absolute",
-                                    top: i * 78,
+                                    top: isDesktop ? i * 78 : (i * 78) / 2,
                                 }}
                             >
                                 <Image
