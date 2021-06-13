@@ -6,6 +6,7 @@ import ReactGa from "react-ga"
 import underwaterImageSheet from "../../assets/isometricunderwater-Sheet.png"
 import individualBanner from "../../assets/individualBanner.png"
 import individualBannerx2 from "../../assets/individualBannerx2.png"
+import individualBannerRed from "../../assets/individualBannerRed.png"
 import individualBannerRedx2 from "../../assets/individualBannerRedx2.png"
 import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png"
 import axios from "axios"
@@ -126,6 +127,7 @@ export const Landing = () => {
         { skill: "python", level: 8 },
         { skill: "graphql", level: 9 },
         { skill: "react", level: 10 },
+        { skill: "aws", level: 7 },
         { skill: "react native", level: 9 },
         { skill: "django", level: 8 },
         { skill: "redux", level: 9 },
@@ -136,7 +138,6 @@ export const Landing = () => {
         { skill: "mongodb", level: 9 },
         { skill: "react test lib", level: 9 },
         { skill: "docker", level: 8 },
-        { skill: "aws", level: 7 },
         { skill: "webpack", level: 7 },
     ]
 
@@ -231,7 +232,7 @@ export const Landing = () => {
                     window.scroll(0, 0)
                 }}
             />
-            <div style={{ position: "relative", width: "688px" }}>
+            <div style={{ position: "relative", width: isDesktop ? "688px" : "344px" }}>
                 {dummyData.map((element, i) => {
                     const splitString = element.skill.split("").reverse()
                     return (
@@ -239,14 +240,22 @@ export const Landing = () => {
                             <div
                                 key={i}
                                 style={{
-                                    width: "688px",
-                                    height: "234px",
+                                    width: "100%",
+                                    // height: "234px",
                                     position: "absolute",
                                     top: i * 78,
                                 }}
                             >
                                 <Image
-                                    src={i % 2 === 0 ? individualBannerx2 : individualBannerRedx2}
+                                    src={
+                                        i % 2 === 0
+                                            ? isDesktop
+                                                ? individualBannerx2
+                                                : individualBanner
+                                            : isDesktop
+                                            ? individualBannerRedx2
+                                            : individualBannerRed
+                                    }
                                     width="100%"
                                     height="100%"
                                 />
