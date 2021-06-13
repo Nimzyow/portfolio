@@ -9,7 +9,7 @@ import individualBannerx2 from "../../assets/individualBannerx2.png"
 import individualBannerRed from "../../assets/individualBannerRed.png"
 import individualBannerRedx2 from "../../assets/individualBannerRedx2.png"
 import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png"
-import { ArtData } from "./components/artData"
+import { ArtData } from "./hooks/artData"
 import level10 from "../../assets/level10.png"
 import level10x2 from "../../assets/level10x2.png"
 import level9 from "../../assets/level9.png"
@@ -86,40 +86,6 @@ export const Landing = () => {
         { skill: "docker", level: 8 },
         { skill: "webpack", level: 7 },
     ]
-
-    // type alphabetData = {
-    //     [key: string]: string
-    // }
-
-    // const alphabet: alphabetData = {
-    //     a: isDesktop ? ax2 : a,
-    //     b: isDesktop ? bx2 : b,
-    //     c: isDesktop ? cx2 : c,
-    //     d: isDesktop ? dx2 : d,
-    //     e: isDesktop ? ex2 : e,
-    //     f: isDesktop ? fx2 : f,
-    //     g: isDesktop ? gx2 : g,
-    //     h: isDesktop ? hx2 : h,
-    //     i: isDesktop ? ix2 : i,
-    //     j: isDesktop ? jx2 : j,
-    //     k: isDesktop ? kx2 : k,
-    //     l: isDesktop ? lx2 : l,
-    //     m: isDesktop ? mx2 : m,
-    //     n: isDesktop ? nx2 : n,
-    //     o: isDesktop ? ox2 : o,
-    //     p: isDesktop ? px2 : p,
-    //     q: isDesktop ? qx2 : q,
-    //     r: isDesktop ? rx2 : r,
-    //     s: isDesktop ? sx2 : s,
-    //     t: isDesktop ? tx2 : t,
-    //     u: isDesktop ? ux2 : u,
-    //     v: isDesktop ? vx2 : v,
-    //     w: isDesktop ? wx2 : w,
-    //     x: isDesktop ? xx2 : x,
-    //     y: isDesktop ? yx2 : y,
-    //     z: isDesktop ? zx2 : z,
-    //     " ": isDesktop ? spacex2 : space,
-    // }
 
     type skillLevelData = {
         [key: string]: string
