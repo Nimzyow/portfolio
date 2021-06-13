@@ -6,6 +6,8 @@ import ReactGa from "react-ga"
 import underwaterImageSheet from "../../assets/isometricunderwater-Sheet.png"
 import individualBanner from "../../assets/individualBanner.png"
 import individualBannerx2 from "../../assets/individualBannerx2.png"
+import floor from "../../assets/floor.png"
+import floorx2 from "../../assets/floorx2.png"
 import individualBannerRed from "../../assets/individualBannerRed.png"
 import individualBannerRedx2 from "../../assets/individualBannerRedx2.png"
 import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png"
@@ -116,6 +118,7 @@ export const Landing = () => {
                 display: "flex",
                 alignItems: "center",
                 flexDirection: "column",
+                position: "relative",
             }}
         >
             <div style={{ height: "30px" }} />
@@ -144,71 +147,80 @@ export const Landing = () => {
                     window.scroll(0, 0)
                 }}
             />
-            <div style={{ position: "relative", width: isDesktop ? "688px" : "344px" }}>
-                {dummyData.map((element, i) => {
-                    const splitString = element.skill.split("").reverse()
-                    return (
-                        <div>
-                            <div
-                                key={i}
-                                style={{
-                                    width: "100%",
-                                    // height: "234px",
-                                    position: "absolute",
-                                    top: isDesktop ? i * 78 : (i * 78) / 2,
-                                }}
-                            >
-                                <Image
-                                    src={
-                                        i % 2 === 0
-                                            ? isDesktop
-                                                ? individualBannerx2
-                                                : individualBanner
-                                            : isDesktop
-                                            ? individualBannerRedx2
-                                            : individualBannerRed
-                                    }
-                                    width="100%"
-                                    height="100%"
-                                />
-                                {splitString.map((letter, j) => {
-                                    return (
-                                        <div
-                                            key={j}
-                                            style={{
-                                                height: isDesktop ? "40px" : "20px",
-                                                width: isDesktop ? "22px" : "11px",
-                                                position: "absolute",
-                                                left: isDesktop ? 292 - j * 20 : (292 - j * 20) / 2,
-                                                bottom: isDesktop ? 37 + j * 10 : (37 + j * 10) / 2,
-                                                // top: 0,
-                                                zIndex: 2,
-                                            }}
-                                        >
-                                            <Image src={alphabet[letter]} width="100%" height="100%" />
-                                        </div>
-                                    )
-                                })}
+            <div style={{ position: "absolute", top: isDesktop ? 579 : 305 }}>
+                <div style={{ position: "relative", width: isDesktop ? "688px" : "344px" }}>
+                    {dummyData.map((element, i) => {
+                        const splitString = element.skill.split("").reverse()
+                        return (
+                            <div>
                                 <div
+                                    key={i}
                                     style={{
-                                        width: isDesktop ? "688px" : "344px",
+                                        width: "100%",
                                         // height: "234px",
                                         position: "absolute",
-                                        top: -5,
-                                        zIndex: 3,
+                                        top: isDesktop ? i * 78 : (i * 78) / 2,
                                     }}
                                 >
-                                    <SpriteAnimator
-                                        sprite={skillLevel[element.level]}
-                                        width={isDesktop ? 688 : 344}
-                                        height={isDesktop ? 234 : 117}
-                                        fps={10}
+                                    <Image
+                                        src={
+                                            i % 2 === 0
+                                                ? isDesktop
+                                                    ? individualBannerx2
+                                                    : individualBanner
+                                                : isDesktop
+                                                ? individualBannerRedx2
+                                                : individualBannerRed
+                                        }
+                                        width="100%"
+                                        height="100%"
                                     />
+                                    {splitString.map((letter, j) => {
+                                        return (
+                                            <div
+                                                key={j}
+                                                style={{
+                                                    height: isDesktop ? "40px" : "20px",
+                                                    width: isDesktop ? "22px" : "11px",
+                                                    position: "absolute",
+                                                    left: isDesktop ? 292 - j * 20 : (292 - j * 20) / 2,
+                                                    bottom: isDesktop ? 37 + j * 10 : (37 + j * 10) / 2,
+                                                    // top: 0,
+                                                    zIndex: 2,
+                                                }}
+                                            >
+                                                <Image
+                                                    src={alphabet[letter]}
+                                                    width="100%"
+                                                    height="100%"
+                                                />
+                                            </div>
+                                        )
+                                    })}
+                                    <div
+                                        style={{
+                                            width: isDesktop ? "688px" : "344px",
+                                            // height: "234px",
+                                            position: "absolute",
+                                            top: -5,
+                                            zIndex: 3,
+                                        }}
+                                    >
+                                        <SpriteAnimator
+                                            sprite={skillLevel[element.level]}
+                                            width={isDesktop ? 688 : 344}
+                                            height={isDesktop ? 234 : 117}
+                                            fps={10}
+                                        />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
+            </div>
+            <div style={{ width: isDesktop ? "688px" : "344px" }}>
+                <Image src={isDesktop ? floorx2 : floor} width="100%" height="100%" />
             </div>
         </div>
     )
