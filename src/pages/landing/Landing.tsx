@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useHistory } from "react-router-dom"
 import { SpriteAnimator } from "react-sprite-animator"
 import { useMediaQuery } from "react-responsive"
@@ -8,6 +8,7 @@ import individualBanner from "../../assets/individualBanner.png"
 import individualBannerx2 from "../../assets/individualBannerx2.png"
 import individualBannerRedx2 from "../../assets/individualBannerRedx2.png"
 import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png"
+import axios from "axios"
 import ax2 from "../../assets/alphabet/ax2.png"
 import bx2 from "../../assets/alphabet/bx2.png"
 import cx2 from "../../assets/alphabet/cx2.png"
@@ -61,6 +62,8 @@ import w from "../../assets/alphabet/w.png"
 import x from "../../assets/alphabet/x.png"
 import y from "../../assets/alphabet/y.png"
 import z from "../../assets/alphabet/z.png"
+import level10 from "../../assets/level10.png"
+import level10x2 from "../../assets/level10x2.png"
 import space from "../../assets/alphabet/space.png"
 import styled from "styled-components"
 import { Image } from "react-bootstrap"
@@ -99,6 +102,10 @@ const InnerDiv = styled.div`
 `
 
 export const Landing = () => {
+    // useEffect(() => {
+    //     getPortfolioData()
+    // }, [])
+
     const history = useHistory()
 
     const goToLink = (link: string) => history.push(`/${link}`)
@@ -161,6 +168,18 @@ export const Landing = () => {
         " ": isDesktop ? spacex2 : space,
     }
 
+    // const getPortfolioData = async () => {
+    //     try {
+    //         const result = await axios({
+    //             method: "GET",
+    //             url: "https://xziny85qdc.execute-api.eu-west-2.amazonaws.com/test/portfoliodata",
+    //         })
+    //         console.log(result)
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
+
     return (
         <div
             style={{
@@ -199,38 +218,57 @@ export const Landing = () => {
                 {dummyData.map((element, i) => {
                     const splitString = element.skill.split("").reverse()
                     return (
-                        <div
-                            key={i}
-                            style={{
-                                width: "688px",
-                                height: "234px",
-                                position: "absolute",
-                                top: i * 78,
-                            }}
-                        >
-                            <Image
-                                src={i % 2 === 0 ? individualBannerx2 : individualBannerRedx2}
-                                width="100%"
-                                height="100%"
-                            />
-                            {splitString.map((letter, j) => {
-                                return (
-                                    <div
-                                        key={j}
-                                        style={{
-                                            height: "40px",
-                                            width: "22px",
-                                            position: "absolute",
-                                            left: 292 - j * 20,
-                                            bottom: 37 + j * 10,
-                                            // top: 0,
-                                            zIndex: 2,
-                                        }}
-                                    >
-                                        <Image src={alphabet[letter]} width="100%" height="100%" />
-                                    </div>
-                                )
-                            })}
+                        <div>
+                            <div
+                                key={i}
+                                style={{
+                                    width: "688px",
+                                    height: "234px",
+                                    position: "absolute",
+                                    top: i * 78,
+                                }}
+                            >
+                                <Image
+                                    src={i % 2 === 0 ? individualBannerx2 : individualBannerRedx2}
+                                    width="100%"
+                                    height="100%"
+                                />
+                                {splitString.map((letter, j) => {
+                                    return (
+                                        <div
+                                            key={j}
+                                            style={{
+                                                height: "40px",
+                                                width: "22px",
+                                                position: "absolute",
+                                                left: 292 - j * 20,
+                                                bottom: 37 + j * 10,
+                                                // top: 0,
+                                                zIndex: 2,
+                                            }}
+                                        >
+                                            <Image src={alphabet[letter]} width="100%" height="100%" />
+                                        </div>
+                                    )
+                                })}
+                                <div
+                                    style={{
+                                        width: "688px",
+                                        // height: "234px",
+                                        position: "absolute",
+                                        top: 0,
+                                        zIndex: 3,
+                                    }}
+                                >
+                                    <SpriteAnimator
+                                        sprite={isDesktop ? level10x2 : level10}
+                                        width={isDesktop ? 688 : 344}
+                                        height={isDesktop ? 234 : 117}
+                                        fps={10}
+                                    />
+                                    <Image src={level10x2} width="100%" height="100%" />
+                                </div>
+                            </div>
                         </div>
                     )
                 })}
