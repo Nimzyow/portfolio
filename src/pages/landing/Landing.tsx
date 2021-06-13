@@ -8,6 +8,15 @@ import individualBanner from "../../assets/individualBanner.png"
 import individualBannerx2 from "../../assets/individualBannerx2.png"
 import individualBannerRedx2 from "../../assets/individualBannerRedx2.png"
 import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png"
+import ax2 from "../../assets/alphabet/ax2.png"
+import cx2 from "../../assets/alphabet/cx2.png"
+import ix2 from "../../assets/alphabet/ix2.png"
+import jx2 from "../../assets/alphabet/jx2.png"
+import px2 from "../../assets/alphabet/px2.png"
+import rx2 from "../../assets/alphabet/rx2.png"
+import sx2 from "../../assets/alphabet/sx2.png"
+import tx2 from "../../assets/alphabet/tx2.png"
+import vx2 from "../../assets/alphabet/vx2.png"
 import styled from "styled-components"
 import { Image } from "react-bootstrap"
 import "./LandingPage.css"
@@ -55,11 +64,27 @@ export const Landing = () => {
 
     const dummyData = [
         { skill: "javascript", level: 10 },
-        { skill: "python", level: 10 },
-        { skill: "typescript", level: 10 },
-        { skill: "django", level: 10 },
-        { skill: "docker", level: 10 },
+        { skill: "javascript", level: 10 },
+        { skill: "javascript", level: 10 },
+        { skill: "javascript", level: 10 },
+        { skill: "javascript", level: 10 },
     ]
+
+    type alphabetData = {
+        [key: string]: string
+    }
+
+    const alphabet: alphabetData = {
+        a: ax2,
+        c: cx2,
+        i: ix2,
+        j: jx2,
+        p: px2,
+        r: rx2,
+        s: sx2,
+        t: tx2,
+        v: vx2,
+    }
 
     return (
         <div
@@ -96,15 +121,44 @@ export const Landing = () => {
                 }}
             />
             <div style={{ position: "relative", width: "688px" }}>
-                {dummyData.map((element, i) => (
-                    <div style={{ width: "688px", height: "234px", position: "absolute", top: i * 78 }}>
-                        <Image
-                            src={i % 2 === 0 ? individualBannerx2 : individualBannerRedx2}
-                            width="100%"
-                            height="100%"
-                        />
-                    </div>
-                ))}
+                {dummyData.map((element, i) => {
+                    const splitString = element.skill.split("").reverse()
+                    return (
+                        <div
+                            key={i}
+                            style={{
+                                width: "688px",
+                                height: "234px",
+                                position: "absolute",
+                                top: i * 78,
+                            }}
+                        >
+                            <Image
+                                src={i % 2 === 0 ? individualBannerx2 : individualBannerRedx2}
+                                width="100%"
+                                height="100%"
+                            />
+                            {splitString.map((letter, j) => {
+                                return (
+                                    <div
+                                        key={j}
+                                        style={{
+                                            height: "40px",
+                                            width: "22px",
+                                            position: "absolute",
+                                            left: 272 - j * 20,
+                                            bottom: 42 + j * 10,
+                                            // top: 0,
+                                            zIndex: 2,
+                                        }}
+                                    >
+                                        <Image src={alphabet[letter]} width="100%" height="100%" />
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )
