@@ -64,6 +64,12 @@ import y from "../../assets/alphabet/y.png"
 import z from "../../assets/alphabet/z.png"
 import level10 from "../../assets/level10.png"
 import level10x2 from "../../assets/level10x2.png"
+import level9 from "../../assets/level9.png"
+import level9x2 from "../../assets/level9x2.png"
+import level8 from "../../assets/level8.png"
+import level8x2 from "../../assets/level8x2.png"
+import level7 from "../../assets/level7.png"
+import level7x2 from "../../assets/level7x2.png"
 import space from "../../assets/alphabet/space.png"
 import styled from "styled-components"
 import { Image } from "react-bootstrap"
@@ -116,22 +122,22 @@ export const Landing = () => {
 
     const dummyData = [
         { skill: "javascript", level: 10 },
-        { skill: "typescript", level: 10 },
-        { skill: "python", level: 10 },
-        { skill: "graphql", level: 10 },
+        { skill: "typescript", level: 8 },
+        { skill: "python", level: 8 },
+        { skill: "graphql", level: 9 },
         { skill: "react", level: 10 },
-        { skill: "react native", level: 10 },
-        { skill: "django", level: 10 },
-        { skill: "redux", level: 10 },
-        { skill: "apollo client", level: 10 },
-        { skill: "node", level: 10 },
-        { skill: "express", level: 10 },
-        { skill: "postgres", level: 10 },
-        { skill: "mongodb", level: 10 },
-        { skill: "react test lib", level: 10 },
-        { skill: "docker", level: 10 },
-        { skill: "aws", level: 10 },
-        { skill: "webpack", level: 10 },
+        { skill: "react native", level: 9 },
+        { skill: "django", level: 8 },
+        { skill: "redux", level: 9 },
+        { skill: "apollo client", level: 9 },
+        { skill: "node", level: 9 },
+        { skill: "express", level: 9 },
+        { skill: "postgres", level: 9 },
+        { skill: "mongodb", level: 9 },
+        { skill: "react test lib", level: 9 },
+        { skill: "docker", level: 8 },
+        { skill: "aws", level: 7 },
+        { skill: "webpack", level: 7 },
     ]
 
     type alphabetData = {
@@ -166,6 +172,17 @@ export const Landing = () => {
         y: isDesktop ? yx2 : y,
         z: isDesktop ? zx2 : z,
         " ": isDesktop ? spacex2 : space,
+    }
+
+    type skillLevelData = {
+        [key: string]: string
+    }
+
+    const skillLevel: skillLevelData = {
+        10: isDesktop ? level10x2 : level10,
+        9: isDesktop ? level9x2 : level9,
+        8: isDesktop ? level8x2 : level8,
+        7: isDesktop ? level7x2 : level7,
     }
 
     // const getPortfolioData = async () => {
@@ -256,17 +273,16 @@ export const Landing = () => {
                                         width: "688px",
                                         // height: "234px",
                                         position: "absolute",
-                                        top: 0,
+                                        top: -5,
                                         zIndex: 3,
                                     }}
                                 >
                                     <SpriteAnimator
-                                        sprite={isDesktop ? level10x2 : level10}
+                                        sprite={skillLevel[element.level]}
                                         width={isDesktop ? 688 : 344}
                                         height={isDesktop ? 234 : 117}
                                         fps={10}
                                     />
-                                    <Image src={level10x2} width="100%" height="100%" />
                                 </div>
                             </div>
                         </div>
