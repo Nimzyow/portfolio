@@ -11,6 +11,8 @@ import floorx2 from "../../assets/floorx2.png"
 import individualBannerRed from "../../assets/individualBannerRed.png"
 import individualBannerRedx2 from "../../assets/individualBannerRedx2.png"
 import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png"
+import isometricunderwaterShortenedSheet from "../../assets/isometricunderwaterShortenedSheet.png"
+import isometricunderwaterShortenedSheetx2 from "../../assets/isometricunderwaterShortenedSheetx2.png"
 import { ArtData } from "./hooks/artData"
 import level10 from "../../assets/level10.png"
 import level10x2 from "../../assets/level10x2.png"
@@ -123,9 +125,11 @@ export const Landing = () => {
         >
             <div style={{ height: "30px" }} />
             <SpriteAnimator
-                sprite={isDesktop ? underwaterImageSheetx200 : underwaterImageSheet}
+                sprite={
+                    isDesktop ? isometricunderwaterShortenedSheetx2 : isometricunderwaterShortenedSheet
+                }
                 width={isDesktop ? 688 : 344}
-                height={isDesktop ? 1790 : 920}
+                height={isDesktop ? 798 : 399}
                 fps={10}
             />
             <OuterDiv
@@ -217,10 +221,16 @@ export const Landing = () => {
                             </div>
                         )
                     })}
+                    <div
+                        style={{
+                            width: isDesktop ? "688px" : "344px",
+                            position: "absolute",
+                            top: isDesktop ? dummyData.length * 78 : (dummyData.length * 78) / 2,
+                        }}
+                    >
+                        <Image src={isDesktop ? floorx2 : floor} width="100%" height="100%" />
+                    </div>
                 </div>
-            </div>
-            <div style={{ width: isDesktop ? "688px" : "344px" }}>
-                <Image src={isDesktop ? floorx2 : floor} width="100%" height="100%" />
             </div>
         </div>
     )
