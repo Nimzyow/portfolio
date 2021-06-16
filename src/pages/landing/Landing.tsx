@@ -1,16 +1,16 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { SpriteAnimator } from "react-sprite-animator"
 import { useMediaQuery } from "react-responsive"
+import { Spinner } from "react-bootstrap"
 import ReactGa from "react-ga"
-import underwaterImageSheet from "../../assets/isometricunderwater-Sheet.png"
+import axios from "axios"
 import individualBanner from "../../assets/individualBanner.png"
 import individualBannerx2 from "../../assets/individualBannerx2.png"
 import floor from "../../assets/floor.png"
 import floorx2 from "../../assets/floorx2.png"
 import individualBannerRed from "../../assets/individualBannerRed.png"
 import individualBannerRedx2 from "../../assets/individualBannerRedx2.png"
-import underwaterImageSheetx200 from "../../assets/isometricunderwater-Sheet-x200.png"
 import isometricunderwaterShortenedSheet from "../../assets/isometricunderwaterShortenedSheet.png"
 import isometricunderwaterShortenedSheetx2 from "../../assets/isometricunderwaterShortenedSheetx2.png"
 import { ArtData } from "./hooks/artData"
@@ -59,10 +59,12 @@ const InnerDiv = styled.div`
 `
 
 export const Landing = () => {
-    // useEffect(() => {
-    //     getPortfolioData()
-    // }, [])
+    useEffect(() => {
+        getPortfolioData()
+    }, [])
 
+    const [data, setData] = useState<{ skill: string; level: number }[]>([])
+    const [loading, setLoading] = useState(true)
     const history = useHistory()
     const { alphabet } = ArtData()
     const goToLink = (link: string) => history.push(`/${link}`)
@@ -70,26 +72,6 @@ export const Landing = () => {
     const isDesktop = useMediaQuery({
         query: "(min-device-width: 575px)",
     })
-
-    const dummyData = [
-        { skill: "javascript", level: 10 },
-        { skill: "typescript", level: 8 },
-        { skill: "python", level: 8 },
-        { skill: "graphql", level: 9 },
-        { skill: "react", level: 10 },
-        { skill: "aws", level: 7 },
-        { skill: "react native", level: 9 },
-        { skill: "django", level: 8 },
-        { skill: "redux", level: 9 },
-        { skill: "apollo client", level: 9 },
-        { skill: "node", level: 9 },
-        { skill: "express", level: 9 },
-        { skill: "postgres", level: 9 },
-        { skill: "mongodb", level: 9 },
-        { skill: "react test lib", level: 9 },
-        { skill: "docker", level: 8 },
-        { skill: "webpack", level: 7 },
-    ]
 
     type skillLevelData = {
         [key: string]: string
@@ -102,17 +84,28 @@ export const Landing = () => {
         7: isDesktop ? level7x2 : level7,
     }
 
-    // const getPortfolioData = async () => {
-    //     try {
-    //         const result = await axios({
-    //             method: "GET",
-    //             url: "https://xziny85qdc.execute-api.eu-west-2.amazonaws.com/test/portfoliodata",
-    //         })
-    //         console.log(result)
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    // }
+    const getPortfolioData = async () => {
+        try {
+            const response = await axios.get(
+                "https://xziny85qdc.execute-api.eu-west-2.amazonaws.com/test/portfoliodata"
+            )
+            setData([...response.data])
+            setLoading(false)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    if (loading) {
+        return (
+            <div
+                className="d-flex justify-content-center align-items-center"
+                style={{ height: "100vh" }}
+            >
+                <Spinner animation="border" />
+            </div>
+        )
+    }
 
     return (
         <div
@@ -153,12 +146,11 @@ export const Landing = () => {
             />
             <div style={{ position: "absolute", top: isDesktop ? 579 : 305 }}>
                 <div style={{ position: "relative", width: isDesktop ? "688px" : "344px" }}>
-                    {dummyData.map((element, i) => {
+                    {data.map((element, i) => {
                         const splitString = element.skill.split("").reverse()
                         return (
-                            <div>
+                            <div key={i}>
                                 <div
-                                    key={i}
                                     style={{
                                         width: "100%",
                                         // height: "234px",
@@ -225,7 +217,7 @@ export const Landing = () => {
                         style={{
                             width: isDesktop ? "688px" : "344px",
                             position: "absolute",
-                            top: isDesktop ? dummyData.length * 78 : (dummyData.length * 78) / 2,
+                            top: isDesktop ? data.length * 78 : (data.length * 78) / 2,
                         }}
                     >
                         <Image src={isDesktop ? floorx2 : floor} width="100%" height="100%" />
