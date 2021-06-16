@@ -32,15 +32,19 @@ const OuterDiv = styled.div`
     height: 30px;
     left: 148px;
     position: absolute;
-    top: 341px;
+    top: -180px;
     cursor: pointer;
+    border: 1px solid black;
+    z-index: 10;
     @media only screen and (min-width: 575px) {
+        border: 1px solid black;
         width: 60px;
         height: 60px;
         position: relative;
-        bottom: 1170px;
+        top: -180px;
         left: -50px;
         cursor: pointer;
+        z-index: 10;
     }
 `
 
@@ -85,12 +89,16 @@ export const Landing = () => {
         7: isDesktop ? level7x2 : level7,
     }
 
+    type lambdaDataType = { skill: string; level: number }[]
+
     const getPortfolioData = async () => {
         try {
             const response = await axios.get(
                 "https://xziny85qdc.execute-api.eu-west-2.amazonaws.com/test/portfoliodata"
             )
-            setData([...response.data])
+
+            const lambdaData: lambdaDataType = response.data
+            setData([...lambdaData])
             setLoading(false)
         } catch (error) {
             console.log(error)
