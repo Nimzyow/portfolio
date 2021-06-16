@@ -30,14 +30,12 @@ import "./LandingPage.css"
 const OuterDiv = styled.div`
     width: 30px;
     height: 30px;
-    left: 148px;
+    left: calc(50% - 40px);
     position: absolute;
-    top: -180px;
+    top: 78%;
     cursor: pointer;
-    border: 1px solid black;
     z-index: 10;
     @media only screen and (min-width: 575px) {
-        border: 1px solid black;
         width: 60px;
         height: 60px;
         position: absolute;
