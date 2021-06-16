@@ -4,7 +4,10 @@ import { SpriteAnimator } from "react-sprite-animator"
 import { useMediaQuery } from "react-responsive"
 import { Spinner } from "react-bootstrap"
 import ReactGa from "react-ga"
+import styled from "styled-components"
+import { Image } from "react-bootstrap"
 import axios from "axios"
+
 import individualBanner from "../../assets/individualBanner.png"
 import individualBannerx2 from "../../assets/individualBannerx2.png"
 import floor from "../../assets/floor.png"
@@ -22,24 +25,24 @@ import level8 from "../../assets/level8.png"
 import level8x2 from "../../assets/level8x2.png"
 import level7 from "../../assets/level7.png"
 import level7x2 from "../../assets/level7x2.png"
-import styled from "styled-components"
-import { Image } from "react-bootstrap"
 import "./LandingPage.css"
 
 const OuterDiv = styled.div`
     width: 30px;
     height: 30px;
-    left: 148px;
+    left: calc(50% - 40px);
     position: absolute;
-    top: 341px;
+    top: 78%;
     cursor: pointer;
+    z-index: 10;
     @media only screen and (min-width: 575px) {
         width: 60px;
         height: 60px;
-        position: relative;
-        bottom: 1170px;
-        left: -50px;
+        position: absolute;
+        top: 78%;
+        left: calc(50% - 80px);
         cursor: pointer;
+        z-index: 10;
     }
 `
 
@@ -84,12 +87,16 @@ export const Landing = () => {
         7: isDesktop ? level7x2 : level7,
     }
 
+    type lambdaDataType = { skill: string; level: number }[]
+
     const getPortfolioData = async () => {
         try {
             const response = await axios.get(
                 "https://xziny85qdc.execute-api.eu-west-2.amazonaws.com/test/portfoliodata"
             )
-            setData([...response.data])
+
+            const lambdaData: lambdaDataType = response.data
+            setData([...lambdaData])
             setLoading(false)
         } catch (error) {
             console.log(error)
@@ -156,6 +163,12 @@ export const Landing = () => {
                                         // height: "234px",
                                         position: "absolute",
                                         top: isDesktop ? i * 78 : (i * 78) / 2,
+                                        cursor: i > 0 ? "pointer" : "auto",
+                                    }}
+                                    onClick={() => {
+                                        if (i > 0) {
+                                            history.push("/portfolio")
+                                        }
                                     }}
                                 >
                                     <Image

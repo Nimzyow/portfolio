@@ -8,6 +8,7 @@ import frameSheet from "../../assets/frameSheet.png"
 
 export const Portfolio = () => {
     useEffect(() => {
+        window.scrollTo(0, 0)
         GApageView("portfolio")
     }, [])
 
