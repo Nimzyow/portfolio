@@ -121,6 +121,8 @@ export const Landing = () => {
                 alignItems: "center",
                 flexDirection: "column",
                 position: "relative",
+                height: isDesktop ? data.length * 78 + 798 + 30 : (data.length * 78) / 2 + 399 + 30,
+                backgroundColor: "#03203C",
             }}
         >
             <div style={{ height: "30px" }} />
