@@ -40,9 +40,9 @@ const OuterDiv = styled.div`
         border: 1px solid black;
         width: 60px;
         height: 60px;
-        position: relative;
-        top: -180px;
-        left: -50px;
+        position: absolute;
+        top: 78%;
+        left: calc(50% - 80px);
         cursor: pointer;
         z-index: 10;
     }
