@@ -163,6 +163,12 @@ export const Landing = () => {
                                         // height: "234px",
                                         position: "absolute",
                                         top: isDesktop ? i * 78 : (i * 78) / 2,
+                                        cursor: i > 0 ? "pointer" : "auto",
+                                    }}
+                                    onClick={() => {
+                                        if (i > 0) {
+                                            history.push("/portfolio")
+                                        }
                                     }}
                                 >
                                     <Image
