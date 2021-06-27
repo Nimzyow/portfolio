@@ -32,14 +32,16 @@ const OuterDiv = styled.div`
     height: 30px;
     left: calc(50% - 40px);
     position: absolute;
-    top: 78%;
+    top: 31%;
     cursor: pointer;
     z-index: 10;
+    border: 1px solid green;
     @media only screen and (min-width: 575px) {
+        border: 1px solid green;
         width: 60px;
         height: 60px;
         position: absolute;
-        top: 78%;
+        top: 30%;
         left: calc(50% - 80px);
         cursor: pointer;
         z-index: 10;
@@ -158,14 +160,14 @@ export const Landing = () => {
                     {data.map((element, i) => {
                         const splitString = element.skill.split("").reverse()
                         return (
-                            <div key={i}>
+                            <div>
                                 <div
                                     style={{
                                         width: "100%",
                                         // height: "234px",
                                         position: "absolute",
                                         top: isDesktop ? i * 78 : (i * 78) / 2,
-                                        cursor: i > 0 ? "pointer" : "auto",
+                                        cursor: i > 0 ? "pointer" : "auto"
                                     }}
                                     onClick={() => {
                                         if (i > 0) {
