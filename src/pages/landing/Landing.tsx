@@ -35,9 +35,7 @@ const OuterDiv = styled.div`
     top: 31%;
     cursor: pointer;
     z-index: 10;
-    border: 1px solid green;
     @media only screen and (min-width: 575px) {
-        border: 1px solid green;
         width: 60px;
         height: 60px;
         position: absolute;
@@ -49,7 +47,7 @@ const OuterDiv = styled.div`
 `
 
 const InnerDiv = styled.div`
-    width: 344px;
+    width: 324px;
     height: 450px;
     position: absolute;
     top: 378px;
@@ -125,6 +123,7 @@ export const Landing = () => {
                 position: "relative",
                 height: isDesktop ? data.length * 78 + 798 + 30 : (data.length * 78) / 2 + 399 + 30,
                 backgroundColor: "#03203C",
+                width: "100%"
             }}
         >
             <div style={{ height: "30px" }} />
